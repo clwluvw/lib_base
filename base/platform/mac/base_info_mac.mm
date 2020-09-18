@@ -43,7 +43,7 @@ QString FromIdentifier(const QString &model) {
 	}
 	QStringList words;
 	QString word;
-	for (const QChar ch : model) {
+	for (const QChar &ch : model) {
 		if (!ch.isLetter()) {
 			continue;
 		}
@@ -59,7 +59,7 @@ QString FromIdentifier(const QString &model) {
 		words.push_back(word);
 	}
 	QString result;
-	for (const QString word : words) {
+	for (const QString &word : words) {
 		if (!result.isEmpty()
 			&& word != "Mac"
 			&& word != "Book") {
